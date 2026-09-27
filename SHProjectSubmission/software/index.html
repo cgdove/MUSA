@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="css/dd.css" type="text/css" media="screen" />
+
+<script>
+    var windowWidth = window.innerWidth;   //obtain the window width and height
+    var windowHeight = window.innerHeight;
+</script>
+
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<!-- <script type="text/javascript" src="libraries/d3.v3.min.js"></script> -->
+<script type="text/javascript" src="libraries/queue.min.js"></script>
+<script type="text/javascript" src="libraries/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="libraries/jquery.dd.min.js"></script>
+<script type="text/javascript" src="libraries/d3plus.js"></script>
+<script type= "text/javascript">
+		d3.selection.prototype.moveToFront = function() {
+ 			 return this.each(function(){
+    		this.parentNode.appendChild(this);
+ 		 });
+		};
+</script>
+<script type="text/javascript" src="scripts/dataCrunching.js"></script>
+<script type="text/javascript" src="scripts/graph.js"></script>
+<script type="text/javascript" src="scripts/createTreeData.js"></script>
+<script type="text/javascript" src="scripts/sidebar.js"></script>
+<script type="text/javascript" src="scripts/d3-timeline.js"></script>
+<script type="text/javascript" src="scripts/timeline.js"></script>
+<script type="text/javascript" src="scripts/quarterChart.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src='libraries/crossfilter.js' type='text/javascript'></script>
+<script src='libraries/dc.js' type='text/javascript'></script>
+<script type="text/javscript" src="libraries/d3tip.js"></script>
+
+<title>Symbol - Keyword Relation</title>
+
+
+
+</head>
+
+<body>
+
+<div id="mainviz">
+    
+<script>
+
+var musaData = "data/musaData.json";
+
+var crossFilteredData;
+
+queue()
+	.defer(d3.json, musaData)
+	.await(initializeData); // function that uses files
+
+</script>
+</div>
+</body>
+
+<nav>
+<div id="options">
+	<script>
+	</script>
+</div>
+</nav>
+
+<aside>
+<div id="sidebar">
+    <div id="sidebar-header"></div>
+    <div id="quarter-chart"></div>
+</div>
+</aside>
+
+<footer>
+<div id="timeline" class="container">
+    <div id="timeline-chart" class="none"></div>
+</div>
+</footer>
+
